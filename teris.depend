@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1552724141 source:c:\users\chen\desktop\teris\main.cpp
+	<Windows.h>
+	"fn.h"
+	<conio.h>
+
+1552723370 c:\users\chen\desktop\teris\fn.h
+	<stdlib.h>
+	<iostream>
+
+1552723947 source:c:\users\chen\desktop\teris\fn.cpp
+	<Windows.h>
+	"fn.h"
+	<string.h>
+	<time.h>
+
