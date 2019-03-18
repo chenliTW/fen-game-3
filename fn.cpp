@@ -66,6 +66,16 @@ void block_type::gen_block_type(){
     ay[3][2]=0;by[3][2]=0;cy[3][2]=0;dy[3][2]=1;
     ax[3][3]=0;bx[3][3]=0;cx[3][3]=1;dx[3][3]=0;
     ay[3][3]=-1;by[3][3]=0;cy[3][3]=0;dy[3][3]=1;
+    //@@
+    //@@
+    ax[4][0]=-1;bx[4][0]=0;cx[4][0]=-1;dx[4][0]=0;
+    ay[4][0]=0;by[4][0]=0;cy[4][0]=1;dy[4][0]=1;
+    ax[4][1]=-1;bx[4][1]=0;cx[4][1]=-1;dx[4][1]=0;
+    ay[4][1]=0;by[4][1]=0;cy[4][1]=1;dy[4][1]=1;
+    ax[4][2]=-1;bx[4][2]=0;cx[4][2]=-1;dx[4][2]=0;
+    ay[4][2]=0;by[4][2]=0;cy[4][2]=1;dy[4][2]=1;
+    ax[4][3]=-1;bx[4][3]=0;cx[4][3]=-1;dx[4][3]=0;
+    ay[4][3]=0;by[4][3]=0;cy[4][3]=1;dy[4][3]=1;
 }
 
 block_type defult_block;
@@ -193,6 +203,11 @@ bool block::right_blocked(){
                 }
             }
             break;
+        case 4:
+            if(world[x+1][y]=='@'||world[x+1][y]=='|'||world[x+1][y+1]=='@'||world[x+1][y+1]=='|'){
+                return 1;
+            }
+            break;
     }
     return 0;
 }
@@ -265,6 +280,11 @@ bool block::left_blocked(){
                 if(world[x-1][y-1]=='@'||world[x-1][y-1]=='|'||world[x-1][y]=='@'||world[x-1][y]=='|'||world[x-1][y+1]=='@'||world[x-1][y+1]=='|'){
                     return 1;
                 }
+            }
+            break;
+        case 4:
+            if(world[x-2][y]=='@'||world[x-2][y]=='|'||world[x-2][y+1]=='@'||world[x-2][y+1]=='|'){
+                return 1;
             }
             break;
     }
@@ -343,6 +363,11 @@ bool block::is_touched(){
                 }
             }
             break;
+        case 4:
+            if(world[x][y+2]=='@'||world[x][y+2]=='#'||world[x-1][y+2]=='@'||world[x-1][y+2]=='#'){
+                return 1;
+            }
+            break;
     }
     return 0;
 }
@@ -355,7 +380,7 @@ void reset(){
     srand(time(NULL));
     memset(world,0,sizeof(world));
     defult_block.gen_block_type();
-    next.type=rand()%4;
+    next.type=rand()%5;
     next.model=0;
     nextblock();
     for(int y=0;y<SIZE;++y){
@@ -376,7 +401,7 @@ void nextblock(){
     now.backtotop();
     now.type=next.type;
     now.model=0;
-    next.type=rand()%4  ;
+    next.type=rand()%5;
     next.model=0;
 }
 

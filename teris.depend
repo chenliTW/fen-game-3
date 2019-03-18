@@ -4,11 +4,11 @@
 	"fn.h"
 	<conio.h>
 
-1552723370 c:\users\chen\desktop\teris\fn.h
+1552916929 c:\users\chen\desktop\teris\fn.h
 	<stdlib.h>
 	<iostream>
 
-1552723947 source:c:\users\chen\desktop\teris\fn.cpp
+1552917023 source:c:\users\chen\desktop\teris\fn.cpp
 	<Windows.h>
 	"fn.h"
 	<string.h>

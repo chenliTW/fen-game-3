@@ -16,8 +16,8 @@ class info{
 
 class block_type{
 public:
-    int ax[4][4]={},bx[4][4]={},cx[4][4]={},dx[4][4]={};
-    int ay[4][4]={},by[4][4]={},cy[4][4]={},dy[4][4]={};
+    int ax[5][4]={},bx[5][4]={},cx[5][4]={},dx[5][4]={};
+    int ay[5][4]={},by[5][4]={},cy[5][4]={},dy[5][4]={};
     void gen_block_type();
 };
 
